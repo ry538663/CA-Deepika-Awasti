@@ -61,14 +61,14 @@ export const siteConfig = {
 
   socials: {
     youtube: "https://www.youtube.com/@The_CACouple",
-    instagram: "https://www.instagram.com/the_cacouple",
+    instagram: "https://www.instagram.com/the_ca_couplesatyika/",
     linkedin: "",
     facebook: "",
   },
 
   theCaCouple: {
     youtube: "https://www.youtube.com/@The_CACouple",
-    instagram: "https://www.instagram.com/the_cacouple",
+    instagram: "https://www.instagram.com/the_ca_couplesatyika/",
   },
 
   whatsapp: {
