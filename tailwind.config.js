@@ -46,7 +46,10 @@ export default {
   				secondary: '#1B365D'
   			},
   			gold: {
-  				DEFAULT: '#D4A853'
+  				DEFAULT: '#D4A853',
+  				dark: '#946816', // Accessible high-contrast gold for text on light backgrounds (WCAG AA > 4.5:1)
+  				light: '#F4E5BE',
+  				hover: '#C29541'
   			},
   			warmwhite: {
   				DEFAULT: '#F8F6F1'
@@ -80,27 +83,9 @@ export default {
   				to: {
   					height: '0'
   				}
-  			},
-  			'accordion-down': {
-  				from: {
-  					height: '0'
-  				},
-  				to: {
-  					height: 'var(--radix-accordion-content-height)'
-  				}
-  			},
-  			'accordion-up': {
-  				from: {
-  					height: 'var(--radix-accordion-content-height)'
-  				},
-  				to: {
-  					height: '0'
-  				}
   			}
   		},
   		animation: {
-  			'accordion-down': 'accordion-down 0.2s ease-out',
-  			'accordion-up': 'accordion-up 0.2s ease-out',
   			'accordion-down': 'accordion-down 0.2s ease-out',
   			'accordion-up': 'accordion-up 0.2s ease-out'
   		}

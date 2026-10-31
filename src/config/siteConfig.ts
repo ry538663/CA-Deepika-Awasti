@@ -1,0 +1,187 @@
+/**
+ * Central configuration file for Income Gain Solutions & Co.
+ * Single source of truth for firm details, contacts, links, and credentials.
+ */
+
+export interface StatItem {
+  value: number;
+  suffix?: string;
+  prefix?: string;
+  label: string;
+  displayPlaceholder?: string;
+}
+
+export interface TeamMember {
+  name: string;
+  designation: string;
+  membershipNo?: string;
+  image: string;
+  bio: string;
+  expertiseHeading: string;
+  expertise: string[];
+}
+
+export const siteConfig = {
+  // Primary firm contact information (as specified)
+  firmName: "Income Gain Solutions & Co.",
+  proprietor: "CA Deepika Awasthi",
+  addressLines: [
+    "1st Floor, C-4023, Sector-10",
+    "Rajajipuram, Lucknow - 226017",
+    "Next to Globe Hospital",
+  ],
+  addressFull:
+    "1st Floor, C-4023, Sector-10, Rajajipuram, Lucknow - 226017 (Next to Globe Hospital)",
+  mapsUrl:
+    "https://www.google.com/maps/search/?api=1&query=C-4023+Sector-10+Rajajipuram+Lucknow+226017",
+  mapsEmbedUrl:
+    "https://www.google.com/maps?q=C-4023+Sector-10+Rajajipuram+Lucknow+226017&output=embed",
+  phone: "+91 83189 72751",
+  phoneTel: "+918318972751",
+  whatsappNumber: "918318972751",
+  email: "theincomegainsolutions@gmail.com",
+  hours: "Mon - Sat: 10:00 AM - 7:00 PM",
+  hoursNote: "Sunday closed. Scheduled consultations by prior appointment",
+  social: {
+    youtube: "",
+    instagram: "",
+    linkedin: "",
+    facebook: "",
+  },
+  frn: "",
+  icai: {
+    deepika: "",
+    satyam: "",
+  },
+
+  // Backwards compatibility aliases for existing components
+  firm: {
+    name: "Income Gain Solutions & Co.",
+    shortName: "Income Gain Solutions",
+    tagline: "Chartered Accountants",
+    description:
+      "Simplifying taxation, regulatory compliance, and banking documentation for individuals, startups, and MSMEs with professional integrity.",
+    foundedBy: "CA Deepika Awasthi",
+  },
+
+  contact: {
+    address:
+      "1st Floor, C-4023, Sector-10, Rajajipuram, Lucknow - 226017 (Next to Globe Hospital)",
+    addressDisplay:
+      "1st Floor, C-4023, Sector-10, Rajajipuram, Lucknow - 226017 (Next to Globe Hospital)",
+    phone: "+91 83189 72751",
+    phoneDisplay: "+91 83189 72751",
+    phoneClean: "918318972751",
+    email: "theincomegainsolutions@gmail.com",
+    emailDisplay: "theincomegainsolutions@gmail.com",
+    workingHours: "Mon - Sat: 10:00 AM - 7:00 PM",
+    workingHoursNote:
+      "Sunday closed. Scheduled consultations by prior appointment",
+  },
+
+  socials: {
+    youtube: "https://www.youtube.com/@The_CACouple",
+    instagram: "https://www.instagram.com/the_cacouple",
+    linkedin: "",
+    facebook: "",
+  },
+
+  theCaCouple: {
+    youtube: "https://www.youtube.com/@The_CACouple",
+    instagram: "https://www.instagram.com/the_cacouple",
+  },
+
+  whatsapp: {
+    phone: "918318972751",
+    defaultMessage: "Hello, I would like a consultation.",
+    get url() {
+      return `https://wa.me/${this.phone}?text=${encodeURIComponent(
+        this.defaultMessage
+      )}`;
+    },
+  },
+
+  // Trusted by & Empaneled organizations
+  empaneledWith: [
+    "CBSE New Delhi",
+    "UP Housing & Development Board",
+    "Udyami",
+    "Business Pathshala",
+    "Entrepreneur India TV",
+  ],
+
+  // Team profiles
+  team: {
+    deepika: {
+      name: "CA Deepika Awasthi",
+      designation: "Chartered Accountant | Proprietor",
+      membershipNo: "", // Empty to hide when not provided
+      image: "/CA%20Deepika%20Awasthi.jpeg",
+      bio: "She oversees professional review, compliance supervision, and institutional assignments. Her leadership drives the firm's commitment to precision and regulatory adherence.",
+      expertiseHeading: "Core Expertise",
+      expertise: [
+        "Income Tax Compliance & Advisory",
+        "GST & Statutory Compliance",
+        "Loan Project Reports & Financial Projections",
+        "Capital Gain & Property Taxation",
+        "TDS Compliance & Regulatory Documentation",
+        "Business Registrations & Structuring",
+      ],
+    } as TeamMember,
+
+    satyam: {
+      name: "CA Satyam Gupta",
+      designation: "Chartered Accountant | Financial Associate",
+      membershipNo: "", // Empty to hide when not provided
+      image: "/CA%20Satyam%20Gupta.jpeg",
+      bio: "He supports analytical review, financial structuring, and documentation validation, ensuring robust financial insights and structured reporting.",
+      expertiseHeading: "Qualifications & Expertise",
+      expertise: [
+        "Certificate Course on Concurrent Audit of Banks (ICAI, 2020)",
+        "Certificate Course on Corporate Social Responsibility (ICAI)",
+        "Financial Analysis & Risk Assessment",
+        "Loan Documentation & CMA Preparation",
+        "Regulatory Compliance Advisory & Strategic Review",
+      ],
+    } as TeamMember,
+  },
+
+  // Stats strip configuration
+  stats: [
+    {
+      value: 10,
+      suffix: "+",
+      label: "Years of Experience",
+      displayPlaceholder: "[X]+",
+    },
+    {
+      value: 500,
+      suffix: "+",
+      label: "Clients Served",
+      displayPlaceholder: "[X]+",
+    },
+    {
+      value: 2500,
+      suffix: "+",
+      label: "Filings Completed",
+      displayPlaceholder: "[X]+",
+    },
+    {
+      value: 1630,
+      suffix: "+",
+      label: "YouTube Subscribers",
+      displayPlaceholder: "[X]+",
+    },
+  ] as StatItem[],
+
+  // Default SEO meta information
+  seo: {
+    siteName: "Income Gain Solutions & Co.",
+    defaultTitle: "Income Gain Solutions & Co. | Chartered Accountants, Lucknow",
+    titleTemplate: "%s | Income Gain Solutions & Co., Lucknow",
+    defaultDescription:
+      "Income Gain Solutions & Co. is a leading Chartered Accountant firm in Lucknow led by CA Deepika Awasthi, providing expert taxation, GST compliance, banking documentation, and business advisory services.",
+    siteUrl: "https://incomegainsolutions.com",
+    ogImage: "/logo..png",
+  },
+};

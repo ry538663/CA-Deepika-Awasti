@@ -1,41 +1,31 @@
-import { motion } from "framer-motion";
+import { siteConfig } from "@/config/siteConfig";
 
 export function TrustBar() {
-  const logos = [
-    "CBSE New Delhi",
-    "UP Housing & Development Board",
-    "Udyami",
-    "Business Pathshala",
-    "Entrepreneur India TV"
-  ];
+  const logos = siteConfig.empaneledWith;
 
   return (
-    <div className="w-full bg-white border-y border-border py-8 overflow-hidden">
+    <div
+      className="w-full bg-white border-y border-border py-8 overflow-hidden select-none"
+      aria-label="Empaneled organizations and institutions"
+    >
       <div className="container mx-auto px-4 mb-4 text-center">
-        <p className="text-sm font-medium text-muted-foreground uppercase tracking-wider">
+        <p className="text-xs sm:text-sm font-semibold text-muted-foreground uppercase tracking-wider">
           Trusted by & Empaneled with
         </p>
       </div>
-      <div className="relative flex w-full">
-        {/* We use two identical lists to create a seamless infinite scroll effect */}
-        <motion.div
-          className="flex whitespace-nowrap"
-          animate={{ x: ["0%", "-50%"] }}
-          transition={{
-            repeat: Infinity,
-            ease: "linear",
-            duration: 20,
-          }}
-        >
-          {[...logos, ...logos].map((logo, index) => (
+
+      <div className="relative flex w-full overflow-hidden">
+        {/* Infinite scrolling track with pause-on-hover & reduced-motion support */}
+        <div className="marquee-track flex items-center">
+          {[...logos, ...logos, ...logos, ...logos].map((logo, index) => (
             <div
               key={index}
-              className="flex-shrink-0 mx-8 md:mx-16 flex items-center justify-center text-lg md:text-xl font-bold text-navy-secondary opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0"
+              className="flex-shrink-0 mx-6 md:mx-12 flex items-center justify-center text-base sm:text-lg md:text-xl font-bold text-navy-secondary opacity-60 hover:opacity-100 transition-opacity cursor-default"
             >
-              {logo}
+              <span>{logo}</span>
             </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </div>
   );

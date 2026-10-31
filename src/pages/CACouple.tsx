@@ -1,51 +1,160 @@
-import { Video, Camera, PlayCircle, BookOpen, GraduationCap, Scale } from "lucide-react";
+import {
+  Video,
+  PlayCircle,
+  BookOpen,
+  GraduationCap,
+  Building2,
+  Scale,
+  ExternalLink,
+  Users,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { SEO } from "@/components/SEO";
+import { CTABanner } from "@/components/common/CTABanner";
+import { siteConfig } from "@/config/siteConfig";
+import { YouTubeIcon, InstagramIcon } from "@/components/common/Icons";
 
 export function CACouple() {
   const missions = [
-    { icon: <BookOpen className="w-6 h-6 text-gold" />, text: "Promote financial literacy" },
-    { icon: <GraduationCap className="w-6 h-6 text-gold" />, text: "Simplify taxation & compliance concepts" },
-    { icon: <Building className="w-6 h-6 text-gold" />, text: "Educate entrepreneurs about regulatory responsibilities" },
-    { icon: <Scale className="w-6 h-6 text-gold" />, text: "Encourage ethical and structured financial practices" }
+    {
+      icon: <BookOpen className="w-6 h-6 text-gold" />,
+      title: "Promote Financial Literacy",
+      desc: "Demystifying balance sheets, tax returns, and banking criteria for non-finance founders.",
+    },
+    {
+      icon: <GraduationCap className="w-6 h-6 text-gold" />,
+      title: "Simplify Taxation & Compliance",
+      desc: "Breaking down complex CBDT and GST notifications into practical, step-by-step guidance.",
+    },
+    {
+      icon: <Building2 className="w-6 h-6 text-gold" />,
+      title: "Educate Entrepreneurs on Regulations",
+      desc: "Guiding micro and small businesses through statutory deadlines and risk-free documentation.",
+    },
+    {
+      icon: <Scale className="w-6 h-6 text-gold" />,
+      title: "Encourage Ethical Financial Practices",
+      desc: "Advocating for transparent books, legitimate tax deductions, and sustainable compliance habits.",
+    },
+  ];
+
+  const videoList = [
+    {
+      title: "Understanding Tax Deductions & Section 80C Explained",
+      views: "2.8K views",
+      time: "Recent Upload",
+      url: siteConfig.socials.youtube,
+      thumbnail:
+        "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=600&q=80",
+    },
+    {
+      title: "Bank Project Report & CMA Data Preparation for MSME Loan",
+      views: "3.4K views",
+      time: "Popular",
+      url: siteConfig.socials.youtube,
+      thumbnail:
+        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80",
+    },
+    {
+      title: "GST Returns & Common Notice Pitfalls to Avoid in 2026",
+      views: "1.9K views",
+      time: "Essential Guide",
+      url: siteConfig.socials.youtube,
+      thumbnail:
+        "https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=600&q=80",
+    },
   ];
 
   return (
-    <div className="pt-24 min-h-screen bg-warmwhite pb-20">
+    <div className="pt-24 min-h-screen bg-warmwhite pb-16">
+      <SEO
+        title="The CA Couple | Financial Awareness & Education"
+        description="The CA Couple is an initiative by CA Deepika Awasthi and CA Satyam Gupta to promote financial literacy, simplify taxation, and empower entrepreneurs across India."
+      />
+
       {/* Hero */}
-      <section className="relative py-20 overflow-hidden bg-navy text-white text-center">
-        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/black-scales.png')] opacity-20 mix-blend-overlay"></div>
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="inline-flex items-center gap-2 rounded-full bg-gold/20 px-4 py-1.5 text-sm font-medium text-gold mb-6 border border-gold/30">
+      <section className="relative py-20 md:py-24 overflow-hidden bg-navy text-white text-center">
+        <div className="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 rounded-full bg-gold/15 blur-3xl pointer-events-none" />
+        <div className="container mx-auto px-4 relative z-10 max-w-4xl">
+          <div className="inline-flex items-center gap-2 rounded-full bg-gold/20 px-4 py-1.5 text-xs sm:text-sm font-semibold text-gold mb-6 border border-gold/30">
             <Video size={16} /> Knowledge-Sharing Platform
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">The CA Couple — Let's Grow Your Finances Together</h1>
-          <p className="text-xl text-white/80 max-w-2xl mx-auto mb-10">
-            A dedicated platform to simplify complex financial concepts for everyone.
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-6 tracking-tight leading-tight">
+            The CA Couple — Let's Grow Your Finances Together
+          </h1>
+          <p className="text-base sm:text-xl text-white/85 max-w-2xl mx-auto mb-10 leading-relaxed">
+            A dedicated awareness platform founded by CA Deepika Awasthi and CA Satyam Gupta to simplify taxation, compliance, and wealth creation for everyone.
           </p>
-          <Button asChild size="lg" className="bg-[#FF0000] hover:bg-[#CC0000] text-white">
-            <a href="#" target="_blank" rel="noopener noreferrer">
-              <Video className="mr-2" /> Subscribe on YouTube
-            </a>
-          </Button>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Button
+              asChild
+              size="lg"
+              className="bg-[#FF0000] hover:bg-[#CC0000] text-white font-bold shadow-lg transition-transform hover:scale-105 h-12 px-7"
+            >
+              <a
+                href={siteConfig.socials.youtube}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2.5 text-white"
+              >
+                <YouTubeIcon className="w-5 h-5 fill-current" />
+                <span>Subscribe on YouTube</span>
+                <ExternalLink size={15} className="opacity-80" />
+              </a>
+            </Button>
+            <Button
+              asChild
+              size="lg"
+              className="bg-gradient-to-r from-[#833AB4] via-[#FD1D1D] to-[#F77737] hover:opacity-95 text-white font-bold shadow-lg transition-transform hover:scale-105 h-12 px-7 border-0"
+            >
+              <a
+                href={siteConfig.socials.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2.5 text-white"
+              >
+                <InstagramIcon className="w-5 h-5 fill-current" />
+                <span>Follow on Instagram</span>
+                <ExternalLink size={15} className="opacity-80" />
+              </a>
+            </Button>
+          </div>
         </div>
       </section>
 
       {/* About Initiative */}
-      <section className="py-20">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <div className="bg-white rounded-3xl p-8 md:p-12 shadow-sm border border-border">
-            <h2 className="text-3xl font-bold text-navy mb-6 text-center">About The Initiative</h2>
-            <p className="text-lg text-muted-foreground text-center max-w-3xl mx-auto mb-12">
-              Alongside our professional practice, we operate a financial awareness and knowledge-sharing platform titled 'The CA Couple.' This platform reflects our commitment toward responsible advisory and informed financial decision-making within the business community.
-            </p>
+      <section className="py-20 md:py-24">
+        <div className="container mx-auto px-4 md:px-6 max-w-5xl">
+          <div className="bg-white rounded-3xl p-8 md:p-14 shadow-sm border border-border">
+            <div className="text-center max-w-3xl mx-auto mb-12">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold/15 text-gold-dark text-xs font-semibold uppercase tracking-wider mb-3 border border-gold/25">
+                Our Purpose
+              </div>
+              <h2 className="text-3xl font-bold text-navy mb-4">
+                About The Initiative
+              </h2>
+              <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
+                Alongside our professional practice, we operate 'The CA Couple' as our contribution toward informed financial decision-making. We believe that when business owners understand their numbers and tax regulations, their businesses grow sustainably and ethically.
+              </p>
+            </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {missions.map((mission, idx) => (
-                <div key={idx} className="flex items-center gap-4 bg-warmwhite p-6 rounded-xl border border-border/50 hover:border-gold/50 transition-colors">
-                  <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center shrink-0 shadow-sm">
+                <div
+                  key={idx}
+                  className="flex items-start gap-4 bg-warmwhite/60 p-6 rounded-2xl border border-border/60 hover:border-gold/50 transition-colors"
+                >
+                  <div className="w-12 h-12 rounded-xl bg-navy text-gold flex items-center justify-center shrink-0 shadow-sm mt-0.5">
                     {mission.icon}
                   </div>
-                  <span className="font-semibold text-navy">{mission.text}</span>
+                  <div>
+                    <h3 className="font-bold text-navy text-base mb-1">
+                      {mission.title}
+                    </h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      {mission.desc}
+                    </p>
+                  </div>
                 </div>
               ))}
             </div>
@@ -53,76 +162,87 @@ export function CACouple() {
         </div>
       </section>
 
-      {/* YouTube Integration */}
-      <section className="py-10">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <div className="flex flex-col md:flex-row justify-between items-center mb-10">
-            <div className="flex items-center gap-4 mb-4 md:mb-0">
-              <div className="w-16 h-16 rounded-full bg-[#FF0000]/10 flex items-center justify-center">
-                <Video className="w-8 h-8 text-[#FF0000]" />
+      {/* YouTube Featured Videos */}
+      <section className="py-12 md:py-16 bg-white border-t border-border/50">
+        <div className="container mx-auto px-4 md:px-6 max-w-5xl">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 gap-4">
+            <div className="flex items-center gap-4">
+              <div className="w-14 h-14 rounded-2xl bg-[#FF0000]/10 flex items-center justify-center text-[#FF0000]">
+                <Video size={28} />
               </div>
               <div>
-                <h3 className="text-2xl font-bold text-navy">Latest Videos</h3>
-                <p className="text-muted-foreground font-medium">1.63K Subscribers • 389+ Videos</p>
+                <h2 className="text-2xl sm:text-3xl font-bold text-navy">
+                  Popular Video Guides
+                </h2>
+                <p className="text-sm text-muted-foreground flex items-center gap-2 mt-0.5">
+                  <Users size={14} className="text-gold-dark" />
+                  <span>1.63K+ Subscribers • 380+ Practical Videos</span>
+                </p>
               </div>
             </div>
-            <div className="flex gap-4">
-              <Button asChild variant="outline" className="border-[#E1306C] text-[#E1306C] hover:bg-[#E1306C]/10">
-                <a href="#" target="_blank" rel="noopener noreferrer">
-                  <Camera className="mr-2" size={18} /> Instagram
-                </a>
-              </Button>
-            </div>
+
+            <Button
+              asChild
+              className="bg-[#FF0000] hover:bg-[#CC0000] text-white font-semibold"
+            >
+              <a
+                href={siteConfig.socials.youtube}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2"
+              >
+                <span>View All on YouTube</span>
+                <ExternalLink size={15} />
+              </a>
+            </Button>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[1, 2, 3].map((_, idx) => (
-              <div key={idx} className="group cursor-pointer">
-                <div className="aspect-video bg-navy/10 rounded-xl overflow-hidden relative mb-4">
-                  <div className="absolute inset-0 flex items-center justify-center bg-navy/20 group-hover:bg-transparent transition-colors">
-                    <PlayCircle className="w-12 h-12 text-white opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all" />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+            {videoList.map((video, idx) => (
+              <a
+                key={idx}
+                href={video.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex flex-col rounded-2xl overflow-hidden bg-warmwhite border border-border shadow-sm hover:shadow-md transition-all"
+              >
+                <div className="aspect-video bg-navy/10 relative overflow-hidden">
+                  <div className="absolute inset-0 flex items-center justify-center bg-navy/20 group-hover:bg-transparent transition-colors z-10">
+                    <PlayCircle className="w-12 h-12 text-white opacity-85 group-hover:opacity-100 group-hover:scale-110 transition-all drop-shadow-md" />
                   </div>
-                  <img src={`https://images.unsplash.com/photo-${1554224155 - idx}?auto=format&fit=crop&w=600&q=80`} alt="Video Thumbnail" className="w-full h-full object-cover mix-blend-multiply" />
+                  <img
+                    src={video.thumbnail}
+                    alt={video.title}
+                    loading="lazy"
+                    width={600}
+                    height={338}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute top-3 right-3 z-10 bg-black/70 backdrop-blur-sm text-white text-[11px] font-semibold px-2 py-0.5 rounded">
+                    {video.time}
+                  </div>
                 </div>
-                <h4 className="font-semibold text-navy group-hover:text-gold transition-colors line-clamp-2">
-                  Understanding Tax Deductions & Section 80C Explained | CA Couple
-                </h4>
-                <p className="text-sm text-muted-foreground mt-1">2.1K views • 2 days ago</p>
-              </div>
+                <div className="p-5 flex flex-col flex-grow">
+                  <h3 className="font-bold text-navy group-hover:text-gold-dark transition-colors line-clamp-2 text-base leading-snug mb-2">
+                    {video.title}
+                  </h3>
+                  <p className="text-xs text-muted-foreground mt-auto">
+                    {video.views}
+                  </p>
+                </div>
+              </a>
             ))}
           </div>
         </div>
       </section>
+
+      {/* Closing CTA */}
+      <CTABanner
+        heading="Have a question inspired by our videos?"
+        subtext="Get customized, professional tax and compliance assistance from CA Deepika Awasthi and CA Satyam Gupta."
+        buttonText="Get Consultation"
+        buttonLink="/contact"
+      />
     </div>
   );
-}
-
-// Inline component for Building since it's not exported from lucide directly by that exact name sometimes.
-function Building(props: any) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <rect width="16" height="20" x="4" y="2" rx="2" ry="2" />
-      <path d="M9 22v-4h6v4" />
-      <path d="M8 6h.01" />
-      <path d="M16 6h.01" />
-      <path d="M12 6h.01" />
-      <path d="M12 10h.01" />
-      <path d="M12 14h.01" />
-      <path d="M16 10h.01" />
-      <path d="M16 14h.01" />
-      <path d="M8 10h.01" />
-      <path d="M8 14h.01" />
-    </svg>
-  )
 }
